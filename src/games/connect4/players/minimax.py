@@ -52,12 +52,11 @@ class MinimaxConnect4Player(Connect4Player):
         if state.is_finished():
             result = state.get_result(self.get_current_pos())
             if result == Connect4Result.WIN.value:
-                return 1000  # Win
+                return 1000
             elif result == Connect4Result.LOOSE.value:
-                return -1000  # Lose
+                return -1000
             else:
-                return 0  # Draw
-        # Simple evaluation function based on pieces in a row
+                return 0
         score = 0
         grid = state.get_grid()
         num_rows = state.get_num_rows()
@@ -86,9 +85,7 @@ class MinimaxConnect4Player(Connect4Player):
         return score
 
     def event_action(self, pos: int, action, new_state: State):
-        # Implement if needed
         pass
 
     def event_end_game(self, final_state: State):
-        # Implement if needed
         pass
